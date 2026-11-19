@@ -1,0 +1,261 @@
+/* Variáveis de cores padrão (Contraste aprovado na WCAG AA/AAA) */
+:root {
+    --cor-fundo: #ffffff;
+    --cor-fundo-alt: #f4f6f8;
+    --cor-texto: #1a1a1a;
+    --cor-primaria: #0056b3;
+    --cor-primaria-hover: #003d82;
+    --cor-borda: #cccccc;
+    --cor-foco: #ff9900;
+    --tamanho-fonte-base: 16px;
+}
+
+/* Tema de Alto Contraste ativado via JavaScript */
+body.alto-contraste {
+    --cor-fundo: #000000;
+    --cor-fundo-alt: #121212;
+    --cor-texto: #ffffff;
+    --cor-primaria: #ffff00;
+    --cor-primaria-hover: #e6e600;
+    --cor-borda: #ffffff;
+    --cor-foco: #00ffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: var(--tamanho-fonte-base);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* Indicador de foco altamente visível para navegação via teclado (Tab) */
+:focus-visible {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 3px;
+}
+
+/* Link de salto oculto visualmente até receber foco do teclado */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: var(--cor-primaria);
+    color: var(--cor-fundo);
+    padding: 12px 16px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: var(--cor-fundo-alt);
+    border-bottom: 2px solid var(--cor-borda);
+    padding: 1rem 0;
+}
+
+.cabecalho .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu a {
+    color: var(--cor-texto);
+    text-decoration: underline;
+    font-weight: 600;
+    padding: 4px;
+}
+
+.controles-acessibilidade {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.controles-acessibilidade button {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-texto);
+    padding: 6px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.controles-acessibilidade button:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+}
+
+/* Seção Hero */
+.hero {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin-bottom: 2rem;
+}
+
+/* Botões */
+.btn-primario {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+body.alto-contraste .btn-primario {
+    color: #000000;
+}
+
+.btn-primario:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+/* Seções Gerais */
+.secao {
+    padding: 3.5rem 0;
+}
+
+.secao-alternativa {
+    background-color: var(--cor-fundo-alt);
+}
+
+.secao h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Cards */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: var(--cor-fundo);
+    border: 2px solid var(--cor-borda);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin-bottom: 0.75rem;
+    color: var(--cor-primaria);
+}
+
+/* Lista */
+.lista-praticas {
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.lista-praticas li {
+    margin-bottom: 0.85rem;
+}
+
+code {
+    background-color: rgba(128, 128, 128, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* Formulário */
+form {
+    max-width: 600px;
+    margin-top: 1.5rem;
+}
+
+.campo-form {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-form label {
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+}
+
+.campo-form input,
+.campo-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid var(--cor-borda);
+    border-radius: 4px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: inherit;
+}
+
+.status-feedback {
+    margin-top: 1rem;
+    font-weight: bold;
+    min-height: 1.5rem;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: var(--cor-fundo-alt);
+    border-top: 2px solid var(--cor-borda);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Respeita a preferência do sistema operacional por redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}

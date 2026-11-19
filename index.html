@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guia prático sobre UX e Acessibilidade Digital para o desenvolvimento de interfaces web inclusivas.">
+    <title>UX e Acessibilidade: Desenvolvendo Interfaces Inclusivas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Link para pular direto ao conteúdo (essencial para leitores de tela e teclado) -->
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header class="cabecalho">
+        <div class="container">
+            <h1 class="logo">UX &amp; Inclusão</h1>
+            
+            <nav aria-label="Menu principal">
+                <ul class="menu">
+                    <li><a href="#pilares">Pilares WCAG</a></li>
+                    <li><a href="#praticas">Boas Práticas</a></li>
+                    <li><a href="#contato">Feedback</a></li>
+                </ul>
+            </nav>
+
+            <!-- Controles de Acessibilidade -->
+            <div class="controles-acessibilidade" role="region" aria-label="Ferramentas de acessibilidade">
+                <button id="btn-contraste" type="button" aria-pressed="false">
+                    Alto Contraste
+                </button>
+                <button id="btn-aumentar-fonte" type="button" aria-label="Aumentar tamanho do texto">
+                    A+
+                </button>
+                <button id="btn-diminuir-fonte" type="button" aria-label="Diminuir tamanho do texto">
+                    A-
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+        <section class="hero">
+            <div class="container">
+                <h2>Desenvolvendo Interfaces Inclusivas</h2>
+                <p>A Experiência do Usuário (UX) só é completa quando todas as pessoas, independentemente de suas habilidades físicas, sensoriais ou cognitivas, conseguem navegar e interagir com a web.</p>
+                <a href="#pilares" class="btn-primario">Explorar os 4 Pilares</a>
+            </div>
+        </section>
+
+        <section id="pilares" class="secao">
+            <div class="container">
+                <h2>Os 4 Pilares da Acessibilidade (POUR)</h2>
+                <p>De acordo com as diretrizes WCAG, toda interface acessível deve ser:</p>
+                
+                <div class="grid-cards">
+                    <article class="card">
+                        <h3>1. Perceptível</h3>
+                        <p>As informações e componentes da interface devem ser apresentados de formas que os usuários possam perceber (ex: textos alternativos em imagens e legendas em vídeos).</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>2. Operável</h3>
+                        <p>Os componentes de navegação devem ser operáveis por diferentes meios, garantindo que todas as funções funcionem apenas com o uso do teclado.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>3. Compreensível</h3>
+                        <p>O conteúdo e a operação da interface devem ser claros, previsíveis e fáceis de entender, com mensagens de erro explicativas em formulários.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>4. Robusto</h3>
+                        <p>O código deve ser bem estruturado para ser interpretado de forma confiável por diferentes navegadores e tecnologias assistivas, como leitores de tela.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="praticas" class="secao secao-alternativa">
+            <div class="container">
+                <h2>Checklist Rápido para Desenvolvedores</h2>
+                <ul class="lista-praticas">
+                    <li><strong>HTML Semântico:</strong> Use tags como <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code> e <code>&lt;button&gt;</code> em vez de apenas <code>&lt;div&gt;</code>.</li>
+                    <li><strong>Contraste de Cores:</strong> Mantenha uma proporção mínima de 4.5:1 entre a cor do texto e a cor do fundo.</li>
+                    <li><strong>Foco Visível:</strong> Nunca remova o contorno (<code>outline</code>) dos elementos sem oferecer uma alternativa visual clara.</li>
+                    <li><strong>Rótulos em Formulários:</strong> Sempre associe cada <code>&lt;input&gt;</code> a uma tag <code>&lt;label&gt;</code> correspondente.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contato" class="secao">
+            <div class="container">
+                <h2>Teste um Formulário Acessível</h2>
+                <p>Envie sua dúvida ou sugestão sobre acessibilidade digital.</p>
+
+                <form id="form-contato" novalidate>
+                    <div class="campo-form">
+                        <label for="nome">Nome completo <span aria-hidden="true">*</span></label>
+                        <input type="text" id="nome" name="nome" required aria-required="true">
+                    </div>
+
+                    <div class="campo-form">
+                        <label for="email">E-mail <span aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+
+                    <div class="campo-form">
+                        <label for="mensagem">Sua mensagem <span aria-hidden="true">*</span></label>
+                        <textarea id="mensagem" name="mensagem" rows="4" required aria-required="true"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primario">Enviar Mensagem</button>
+                    
+                    <!-- Região dinâmica anunciada automaticamente por leitores de tela -->
+                    <div id="status-mensagem" class="status-feedback" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <p>Projeto educativo sobre UX e Acessibilidade Web. Construído com foco em inclusão digital.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
